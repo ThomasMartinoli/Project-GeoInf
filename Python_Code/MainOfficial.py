@@ -5,9 +5,9 @@
 
 import numpy as np
 import array
-from Function_Update_12_11_22 import *
-from RegionGrowing_LayerSum_Update_12_11_22 import *
-from RegionGrowing_pixelBypixel_Update_12_11_22 import *
+from Function import *
+from RegionGrowing_LayerSum import *
+from RegionGrowing_pixelBypixel import *
 import pylab as pl
 import time
 import rasterio
@@ -30,7 +30,7 @@ SeedTif=rasterio.open(path+Seed_file)
 GrowTif=rasterio.open(path+Grow_file)
 ResultTif=rasterio.open(path+Result_file)
 
-
+# size selection
 sizeR=500
 sizeC=500
 
@@ -40,7 +40,7 @@ Seed_array = SeedTif.read()
 Grow_array = GrowTif.read()
 Result_array = ResultTif.read()
 
-#inizializzo time a -1
+#inizialization of time a -1
 
 T=np.ones((sizeR,sizeC))*-1
 
