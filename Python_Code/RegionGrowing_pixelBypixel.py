@@ -11,8 +11,7 @@ con iterazione si intende far scorrere tutti gli elementi di una matrice
 @author: thmar
 """
 
-from Function_Update_12_11_22 import *
-import collections
+from Function import *
 import numpy as np
 
 def RG_PP(Raster,sizeR,sizeC):
