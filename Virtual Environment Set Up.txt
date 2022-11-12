@@ -1,0 +1,54 @@
+# environment setup for pandas|geopandas|gdal|ogr|fiona|shapely|pysal|spyder|etc.
+
+# install Anaconda from https://docs.anaconda.com/anaconda/install/
+# run separately the following commands in the Anaconda Prompt
+# (do not run comment "#" line!) 
+# you may use the Anaconda Navigator GUI to perform these operations: https://docs.anaconda.com/anaconda/navigator/getting-started
+
+# A - this create an empty environment called "NAME_YOU_WANT"
+
+conda config --add channels conda-forge
+conda create -n NAME_YOU_WANT python=3.9.13
+
+# B - activate the environment called "NAME_YOU_WANT"
+conda activate NAME_YOU_WANT
+# N.B. for Mac/Linux users -> source activate NAME_YOU_WANT
+
+# C - this will install almost all the geo library you will need
+conda install -c conda-forge geopandas 
+
+# D - let's add the Spyder shell to work with
+conda install spyder
+
+# E - just one more lib you will use RASTERIO
+# in order to install it open the Anaconda Navigater
+# click on the "Enviroments" label and search "Rasterio" in the "Not Installed Application"
+# select it and click on the "Apply" button
+
+-------other useful commands------------------
+
+#to activate Spyder from a virtual env
+conda activate NAME_YOU_WANT
+spyder
+
+#to clone the environment called "test"
+conda create -n test_clone --clone test 
+
+#to change Python version of the environment called "test"
+conda install -n test python=X.X
+
+#to update packages in the environment called "test"
+conda update -n test --all
+
+#to update packages in the root environment
+conda update -n base conda
+
+#to remove the whole environment called "test"
+conda remove --name test --all
+
+#to export an whole environment into a portable installation file
+conda env export > environment.yaml
+
+#to install an environment from a portable installation file
+conda env create -f environment.yaml
+
