@@ -7,7 +7,11 @@
 
 
 import numpy as np
+<<<<<<< HEAD
 from Function_Update import *
+=======
+from Function import *
+>>>>>>> 11b87626bc8c9d76599d44447190ac31b51c88dc
 from RegionGrowing_LayerSum import *
 from RegionGrowing_pixelBypixel import *
 import time
