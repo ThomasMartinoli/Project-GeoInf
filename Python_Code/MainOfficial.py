@@ -4,11 +4,9 @@
 """
 
 import numpy as np
-import array
 from Function import *
 from RegionGrowing_LayerSum import *
 from RegionGrowing_pixelBypixel import *
-import pylab as pl
 import time
 import rasterio
 from matplotlib import pyplot
@@ -44,9 +42,6 @@ Result_array = ResultTif.read()
 
 T=np.ones((sizeR,sizeC))*-1
 
-#inizialmente considero solo i semi come pixel bruciati 
-#quindi inizializzo k con gli stessi valori del layer seed
-
 Raster=np.array([Seed_array[:,0:sizeR,0:sizeC],Grow_array[:,0:sizeR,0:sizeC],T])
 
 #------------------------------------------------------------------------------
@@ -59,14 +54,12 @@ print('seed_new|','seed_old|','iter','\n')
 start = time.process_time()
 Burned_LS, seed_array_LS, iterazioni_LS = RG_LS(Raster,sizeR,sizeC)
 
-
 pyplot.imshow(Seed_array[0][0:sizeR,0:sizeC], cmap='hot_r')
 pyplot.show() 
 pyplot.imshow(Grow_array[0][0:sizeR,0:sizeC], cmap='hot_r')
 pyplot.show() 
 pyplot.imshow(Burned_LS[0], cmap='hot_r')
 pyplot.show() 
-
 
 LS_File="\\LS_Result.tif"
 LS_File_Out=path+LS_File
@@ -84,7 +77,6 @@ with rasterio.open(LS_File_Out,
 
 
 end = time.process_time()
-
 
 print('\n')
 print('COMPUTATIONAL TIME LAYER SUM: ',(end - start)/60)
@@ -156,3 +148,9 @@ plt.ylabel("# seed")
 legend=ax.legend()
 plt.show()
 
+#-----------------------------------------------------------------------------
+# Close TIF file
+#-----------------------------------------------------------------------------
+
+SeedTif.close()
+GrowTif.close()
