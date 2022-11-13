@@ -55,7 +55,7 @@ for size in dimension:
     
     for i in range(1):
         start_LS=time.process_time()
-        print('Output:',i+1,'\n')
+        print('Output:',size , "pixel",'\n')
         Burned_LS, seed_array_LS, iterazioni_LS=RG_LS(Raster,sizeR,sizeC)
         
         print('-----------------------')
@@ -94,7 +94,7 @@ for size in dimension:
     
     for i in range(1):
         start_PP=time.process_time()
-        print('Output:',i+1,'\n')
+        print('Output:',size ,"pixel",'\n')
         Burned_PP, seed_array_PP, iterazioni_PP=RG_PP(Raster,sizeR,sizeC)
         print('-----------------------')
         end_PP=time.process_time()
