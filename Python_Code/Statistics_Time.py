@@ -7,17 +7,16 @@
 
 
 import numpy as np
-from Function_Update_12_11_22 import *
-from RegionGrowing_LayerSum_Update_12_11_22 import *
-from RegionGrowing_pixelBypixel_Update_12_11_22 import *
-import pylab as pl
+from Function_Update import *
+from RegionGrowing_LayerSum import *
+from RegionGrowing_pixelBypixel import *
 import time
 import matplotlib.pyplot as plt
 import os
 import rasterio
 
-#dimension=np.array([200,250,300,350,400,450,500,550,600,650,700,750,800,850,900,950,1000,1050,1100,1150,1200,1250,1300,1350,1400])
-dimension=np.array([0,400])
+dimension=np.array([200,250,300,350,400,450,500,550,600,650,700,750,800,850,900,950,1000,1050,1100,1150,1200,1250,1300,1350,1400])
+#dimension=np.array([0,400])
 
 #-----------------------------------------------------------------------------
 # Open TIF file
