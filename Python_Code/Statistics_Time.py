@@ -7,10 +7,9 @@
 
 
 import numpy as np
-from Function_Update_12_11_22 import *
-from RegionGrowing_LayerSum_Update_12_11_22 import *
-from RegionGrowing_pixelBypixel_Update_12_11_22 import *
-import pylab as pl
+from Function import *
+from RegionGrowing_LayerSum import *
+from RegionGrowing_pixelBypixel import *
 import time
 import matplotlib.pyplot as plt
 import os
