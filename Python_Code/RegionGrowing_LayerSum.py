@@ -16,6 +16,7 @@ non resta invariato
 #RG_LS region growing layer sum
 
 from Function import *
+import collections
 import numpy as np
 
 def RG_LS(Raster,sizeR,sizeC):
@@ -24,7 +25,7 @@ def RG_LS(Raster,sizeR,sizeC):
     iterazioni=np.array([])
     N=np.count_nonzero(Raster[0])
     
-    Seed=Raster[0].copy()
+    Seed=Raster[0,:,:].copy()
     M=0
     k=0
     
@@ -32,7 +33,7 @@ def RG_LS(Raster,sizeR,sizeC):
         
         M=N
         Vicini=CercaVicini(Seed,sizeR,sizeC)
-                
+        
         Result=Vicini+Raster[1]
         
         ModifiedResult= np.floor(Result/2)
@@ -43,8 +44,10 @@ def RG_LS(Raster,sizeR,sizeC):
         iterazioni=np.append(iterazioni,k)
         
         N=np.count_nonzero(ModifiedResult)
+        
         k=k+1
-                
-        print(N,M,k)
+        
+        
+        #print(N,M,k)
         
     return Seed, seed_array, iterazioni
