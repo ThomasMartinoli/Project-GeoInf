@@ -13,10 +13,11 @@ con iterazione si intende far scorrere tutti gli elementi di una matrice
 
 from Function import *
 import numpy as np
+import copy
 
 def RG_PP(Raster,sizeR,sizeC):
     
-    RasterPP=Raster.copy()
+    RasterPP=copy.deepcopy(Raster)
     iterazione=1
     M=0
     N=np.count_nonzero(RasterPP[0])
