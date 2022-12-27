@@ -14,8 +14,8 @@ import numpy as np
 import array
 from Function import *
 from RegionGrowing_LayerSum import *
-from RegionGrowing_pixelBypixel import *
-#from RegionGrowing_pixelBypixel_condition import *
+#from RegionGrowing_pixelBypixel import *
+from RegionGrowing_pixelBypixel_condition import *
 import pylab as pl
 import time
 import matplotlib.pyplot as plt
@@ -137,7 +137,7 @@ plt.show()
 # Errors with respect to the proposed solution
 #-----------------------------------------------------------------------------
     
-Test=Burned-Result
+Test=Burned_PP[0]-Result
 
 A=np.count_nonzero(Test==0)
 B=np.count_nonzero(Test==1)
@@ -145,7 +145,7 @@ C=np.count_nonzero(Test==-1)
 
 print('-----------------------')
 print('Errori')
-commission_error=B/np.count_nonzero(Burned)*100
+commission_error=B/np.count_nonzero(Burned_PP)*100
 print('Errore di commissione:',round(commission_error,2),'%')
 omission_error=C/np.count_nonzero(Result)*100
 print('Errore di omissione:',round(omission_error,2),'%')
