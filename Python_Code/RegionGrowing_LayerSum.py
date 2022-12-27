@@ -15,6 +15,10 @@ non resta invariato
 
 #RG_LS region growing layer sum
 
+#------------------------------------------------------------------------------
+# Importing the libraries
+#------------------------------------------------------------------------------
+
 from Function import *
 import collections
 import numpy as np

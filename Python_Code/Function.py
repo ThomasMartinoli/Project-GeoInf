@@ -1,29 +1,24 @@
 # -*- coding: utf-8 -*-
 """
-File che contiene una serie di funzioni utili 
-nell'implementazione della fase di Region Growing
+This file contais the functions that are useful in order to run the Main
 
-@author: thmar
 """
+#------------------------------------------------------------------------------
+# Importing the libraries
+#------------------------------------------------------------------------------
 
 import matplotlib.pyplot as plt
 from matplotlib import colors
 import numpy as np
 import rasterio
-from matplotlib import pyplot
 import os
 import copy
-
-
-
-
 
 #------------------------------------------------------------------------------
 # Export the result in a .TIF
 #------------------------------------------------------------------------------
 
-# devo capire come selezionare la dimensione height and output dell'immagine così funziona, 
-# ma se muovessi la finestra per esempio 200:300,200:30 quando apro immagine in Qgis cosa accadrebbe? 
+
 def ExportResult(Burned,sizeR,sizeC):
     path = os.getcwd()
     
@@ -56,7 +51,7 @@ def ExportResult(Burned,sizeR,sizeC):
 
 
 #------------------------------------------------------------------------------
-# 
+# Importing the input as a binary matrix starting from a .TIF
 #------------------------------------------------------------------------------
 
 def TakeImage(sizeR,sizeC):
@@ -79,7 +74,7 @@ def TakeImage(sizeR,sizeC):
     
 
 #------------------------------------------------------------------------------
-# Crea griglie colorate a seconda del valore del pixel: 
+# Plot a color grid reading the value in the matrix: 
 # 0 (unburned, green)
 # 1 (burned, red)
 #------------------------------------------------------------------------------
@@ -103,11 +98,11 @@ def ColorGrid(data,sizeR,sizeC):
   
     
 #------------------------------------------------------------------------------
-# Cerca gli 8 vicini di un pixel, nel nostro caso il pixel in questione
-# è un seed e andiamo a selezionare i suoi vicini
+# Look for the 8 neighbors of a pixel, in our case the pixel in question
+# is a seed and we go to select its neighbors
 #------------------------------------------------------------------------------
 
-#copy() necessario altrimenti python crea non una coppia ma un collegamento
+#copy() necessario altrimenti python crea non una copia ma un collegamento
 #e se modifivco uno allora modifico pure l'altro se si tratta di array
 
 def CercaVicini(Raster,sizeR,sizeC):
@@ -167,47 +162,6 @@ def CercaVicini(Raster,sizeR,sizeC):
           
     return MatriceVicini
           
-#------------------------------------------------------------------------------
-# Index aggregation 
-#------------------------------------------------------------------------------
-# utilizzando l'articolo "bwimage"
-# https://drive.google.com/file/d/1QB1sTlm3h1kzV8QThWVCWc99tosLjNPw/view
-
-# l'idea,guardando i 4 vicini (a croce) di un pixel, è quella di assegnare a 
-# ciascun pixel un valore pari a:
-# 1 se 4 vicini su 4 hanno lo stesso valore del pixel 
-# 0.75 se 3 vicini su 4 hanno lo stesso valore del pixel<
-# 0.5 se 2 vicini su 4 hanno lo stesso valore del pixel
-# 0.25 se 1 vicini su 4 hanno lo stesso valore del pixel
-# 0 se 0 vicini su 4 hanno lo stesso valore del pixel
-# inoltre non si considerano i bordi: prima ed ultima riga, prima ed ultima colonna
-# indici j=0,k=0,j=size-1,k=size-1
-
-import numpy as np
-def AggregationIndex(SEED,size):
-    AggregationMatrix=np.zeros([size-2,size-2])
-    for j in range (size):
-        for k in range (size):
-    
-            if j!=0 and k!=0 and j!=size-1 and k!=size-1:
-                vicini=[SEED[j,k-1],SEED[j-1,k],SEED[j,k+1], SEED[j+1,k]]
-                ones=np.count_nonzero(vicini)
-                zeros=len(vicini)-ones
-                if SEED[j,k]==0:
-                    AggregationMatrix[j-1,k-1]=zeros/len(vicini)
-                if SEED[j,k]==1:
-                    AggregationMatrix[j-1,k-1]=ones/len(vicini)
-                    
-    # Number Of Rows
-    Row=len(AggregationMatrix) 
-    # Number Of Columns
-    Column=len(AggregationMatrix)
-    #Number Of Elements
-    Elements= Row*Column  
-    #Aggregation index, it is a mean           
-    Index= sum(sum(AggregationMatrix))/Elements
-    return Index,AggregationMatrix
-
 #------------------------------------------------------------------------------
 #------------------------------------------------------------------------------
 

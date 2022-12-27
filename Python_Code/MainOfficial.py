@@ -3,13 +3,16 @@
 @author: thmar
 """
 
+#------------------------------------------------------------------------------
+# Importing the libraries
+#------------------------------------------------------------------------------
 
 import numpy as np
 from Function import *
 from RegionGrowing_LayerSum import *
 from RegionGrowing_pixelBypixel import *
+#from RegionGrowing_pixelBypixel_condition import *
 import time
-
 
 #------------------------------------------------------------------------------
 #Import Images from .TIF file
@@ -38,7 +41,6 @@ print('seed_new|','seed_old|','iter','\n')
 start = time.process_time()
 Burned_LS, seed_array_LS, iterazioni_LS = RG_LS(Raster,sizeR,sizeC)
 
-#tre output
 
 ColorGrid(OWAseed,sizeR,sizeC)
 ColorGrid(OWAgrow,sizeR,sizeC)
@@ -72,7 +74,7 @@ print('--------------------------------------------')
 
 
 #-----------------------------------------------------------------------------
-#ERRORI rispetto alla soluzione proposta
+# Errors with respect to the proposed solution
 #-----------------------------------------------------------------------------
     
 Test=Burned_PP[0]-Result

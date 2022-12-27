@@ -1,18 +1,21 @@
 # -*- coding: utf-8 -*-
 """
-Created on Wed Oct  5 10:28:17 2022
+This file is used in order to compute some comparison between the two methods
 
-@author: thmar
 """
 
 #STATISTICHE
 
+#------------------------------------------------------------------------------
+# Importing the libraries
+#------------------------------------------------------------------------------
 
 import numpy as np
 import array
 from Function import *
 from RegionGrowing_LayerSum import *
 from RegionGrowing_pixelBypixel import *
+#from RegionGrowing_pixelBypixel_condition import *
 import pylab as pl
 import time
 import matplotlib.pyplot as plt
@@ -66,12 +69,8 @@ print('-----------------------')
 
 print('Region Growing Pixel by Pixel\n')
 
-
-
 mean_PP=np.array([])
 var_PP=np.var([])
-
-
 
 for size in dimension:
     
@@ -103,10 +102,9 @@ for size in dimension:
     var_PP=np.append(var_PP,var)
     
 #-----------------------------------------------------------------------------
-#Calcolo delle statistiche
+# Statistics computation 
 #-----------------------------------------------------------------------------
-    
-
+  
 
 fig, ax=plt.subplots()
 ax.plot(dimension, mean_LS, marker = "o", color = 'red', label='LayerSum')
@@ -136,7 +134,7 @@ plt.show()
 
 
 #-----------------------------------------------------------------------------
-#ERRORI rispetto alla soluzione proposta
+# Errors with respect to the proposed solution
 #-----------------------------------------------------------------------------
     
 Test=Burned-Result

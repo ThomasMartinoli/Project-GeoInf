@@ -11,6 +11,10 @@ con iterazione si intende far scorrere tutti gli elementi di una matrice
 @author: thmar
 """
 
+#------------------------------------------------------------------------------
+# Importing the libraries
+#------------------------------------------------------------------------------
+
 from Function import *
 import numpy as np
 
