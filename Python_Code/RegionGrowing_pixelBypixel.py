@@ -45,42 +45,58 @@ def RG_PP(Raster,sizeR,sizeC):
                     # neighbor examination                
                     
                     # above-left   
-                    if j>0 and k>0 and RasterPP[0,j-1,k-1]==0 and RasterPP[1,j-1,k-1]==1 and RasterPP[2,j-1,k-1]==-1:
+                    if j>0 and k>0 and RasterPP[0,j-1,k-1]==0 and \
+                        RasterPP[1,j-1,k-1]==1 and RasterPP[2,j-1,k-1]==-1:
+                            
                         RasterPP[0,j-1,k-1]=1
                         RasterPP[2,j-1,k-1]=iterazione
                     
                     # above
-                    if j>0 and RasterPP[0,j-1,k]==0 and RasterPP[1,j-1,k]==1 and RasterPP[2,j-1,k]==-1:
+                    if j>0 and RasterPP[0,j-1,k]==0 and \
+                        RasterPP[1,j-1,k]==1 and RasterPP[2,j-1,k]==-1:
+                            
                         RasterPP[0,j-1,k]=1
                         RasterPP[2,j-1,k]=iterazione
                     
                     #above-right
-                    if j>0 and k<=sizeC-2 and RasterPP[0,j-1,k+1]==0 and RasterPP[1,j-1,k+1]==1 and RasterPP[2,j-1,k+1]==-1:
+                    if j>0 and k<=sizeC-2 and RasterPP[0,j-1,k+1]==0 and \
+                        RasterPP[1,j-1,k+1]==1 and RasterPP[2,j-1,k+1]==-1:
+                            
                         RasterPP[0,j-1,k+1]=1
                         RasterPP[2,j-1,k+1]=iterazione
                         
                     #left
-                    if k>0 and RasterPP[0,j,k-1]==0 and RasterPP[1,j,k-1]==1 and RasterPP[2,j,k-1]==-1:
+                    if k>0 and RasterPP[0,j,k-1]==0 and\
+                        RasterPP[1,j,k-1]==1 and RasterPP[2,j,k-1]==-1:
+                            
                         RasterPP[0,j,k-1]=1
                         RasterPP[2,j,k-1]=iterazione
                         
                     #right
-                    if k<=sizeC-2 and RasterPP[0,j,k+1]==0 and RasterPP[1,j,k+1]==1 and RasterPP[2,j,k+1]==-1:
+                    if k<=sizeC-2 and RasterPP[0,j,k+1]==0 and \
+                        RasterPP[1,j,k+1]==1 and RasterPP[2,j,k+1]==-1:
+                            
                         RasterPP[0,j,k+1]=1
                         RasterPP[2,j,k+1]=iterazione
                     
                     #below-left    
-                    if j<=sizeR-2 and k>0 and RasterPP[0,j+1,k-1]==0 and RasterPP[1,j+1,k-1]==1 and RasterPP[2,j+1,k-1]==-1:
+                    if j<=sizeR-2 and k>0 and RasterPP[0,j+1,k-1]==0 and \
+                        RasterPP[1,j+1,k-1]==1 and RasterPP[2,j+1,k-1]==-1:
+                            
                         RasterPP[0,j+1,k-1]=1
                         RasterPP[2,j+1,k-1]=iterazione
                     
                     #below    
-                    if j<=sizeR-2 and RasterPP[0,j+1,k]==0 and RasterPP[1,j+1,k]==1 and RasterPP[2,j+1,k]==-1:
+                    if j<=sizeR-2 and RasterPP[0,j+1,k]==0 and \
+                        RasterPP[1,j+1,k]==1 and RasterPP[2,j+1,k]==-1:
+                            
                         RasterPP[0,j+1,k]=1
                         RasterPP[2,j+1,k]=iterazione
                     
                     #below-right    
-                    if j<=sizeR-2 and k<=sizeC-2 and RasterPP[0,j+1,k+1]==0 and RasterPP[1,j+1,k+1]==1 and RasterPP[2,j+1,k+1]==-1:
+                    if j<=sizeR-2 and k<=sizeC-2 and RasterPP[0,j+1,k+1]==0 \
+                        and RasterPP[1,j+1,k+1]==1 and RasterPP[2,j+1,k+1]==-1:
+                            
                         RasterPP[0,j+1,k+1]=1
                         RasterPP[2,j+1,k+1]=iterazione                            
                          

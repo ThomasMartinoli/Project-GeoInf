@@ -20,7 +20,6 @@ non resta invariato
 #------------------------------------------------------------------------------
 
 from Function import *
-import collections
 import numpy as np
 
 def RG_LS(Raster,sizeR,sizeC):

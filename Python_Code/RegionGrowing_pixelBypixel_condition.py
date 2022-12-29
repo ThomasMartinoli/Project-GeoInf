@@ -42,7 +42,8 @@ def RG_PP(Raster,sizeR,sizeC):
                     # neighbor examination                
                     
                     # above-left   
-                    if j>0 and k>0 and RasterPP[0,j-1,k-1]==0 and RasterPP[1,j-1,k-1]==1:
+                    if j>0 and k>0 and RasterPP[0,j-1,k-1]==0 and \
+                        RasterPP[1,j-1,k-1]==1:
                         RasterPP[0,j-1,k-1]=1
                         
                     
@@ -52,7 +53,8 @@ def RG_PP(Raster,sizeR,sizeC):
                         
                     
                     #above-right
-                    if j>0 and k<=sizeC-2 and RasterPP[0,j-1,k+1]==0 and RasterPP[1,j-1,k+1]==1:
+                    if j>0 and k<=sizeC-2 and RasterPP[0,j-1,k+1]==0 and \
+                        RasterPP[1,j-1,k+1]==1:
                         RasterPP[0,j-1,k+1]=1
                         
                         
@@ -61,22 +63,26 @@ def RG_PP(Raster,sizeR,sizeC):
                         RasterPP[0,j,k-1]=1
                         
                     #right
-                    if k<=sizeC-2 and RasterPP[0,j,k+1]==0 and RasterPP[1,j,k+1]==1:
+                    if k<=sizeC-2 and RasterPP[0,j,k+1]==0 and \
+                        RasterPP[1,j,k+1]==1:
                         RasterPP[0,j,k+1]=1
                         
                     
                     #below-left    
-                    if j<=sizeR-2 and k>0 and RasterPP[0,j+1,k-1]==0 and RasterPP[1,j+1,k-1]==1:
+                    if j<=sizeR-2 and k>0 and RasterPP[0,j+1,k-1]==0 and \
+                        RasterPP[1,j+1,k-1]==1:
                         RasterPP[0,j+1,k-1]=1
                         
                     
                     #below    
-                    if j<=sizeR-2 and RasterPP[0,j+1,k]==0 and RasterPP[1,j+1,k]==1:
+                    if j<=sizeR-2 and RasterPP[0,j+1,k]==0 and \
+                        RasterPP[1,j+1,k]==1:
                         RasterPP[0,j+1,k]=1
                         
                     
                     #below-right    
-                    if j<=sizeR-2 and k<=sizeC-2 and RasterPP[0,j+1,k+1]==0 and RasterPP[1,j+1,k+1]==1:
+                    if j<=sizeR-2 and k<=sizeC-2 and \
+                        RasterPP[0,j+1,k+1]==0 and RasterPP[1,j+1,k+1]==1:
                         RasterPP[0,j+1,k+1]=1
                                                     
                          

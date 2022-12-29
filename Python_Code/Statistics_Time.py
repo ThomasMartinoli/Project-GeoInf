@@ -11,12 +11,10 @@ This file is used in order to compute some comparison between the two methods
 #------------------------------------------------------------------------------
 
 import numpy as np
-import array
 from Function import *
 from RegionGrowing_LayerSum import *
 #from RegionGrowing_pixelBypixel import *
 from RegionGrowing_pixelBypixel_condition import *
-import pylab as pl
 import time
 import matplotlib.pyplot as plt
 
@@ -27,42 +25,42 @@ dimension=np.array([200,250,300,350,400,450,500,550,600,650,700,750,800,850,900,
 #RegionGrowing_LayerSum
 #-----------------------------------------------------------------------------
 
-print('Region Growing Layer Sum \n')
+# print('Region Growing Layer Sum \n')
 
 
-mean_LS=np.array([])
-var_LS=np.var([])
+# mean_LS=np.array([])
+# var_LS=np.var([])
 
-for size in dimension:
+# for size in dimension:
     
-    sizeR=size
-    sizeC=size
-    print('LS', size)
+#     sizeR=size
+#     sizeC=size
+#     print('LS', size)
     
     
-    OWAseed,OWAgrow,Result=TakeImage(sizeR,sizeC)
-    T=np.ones((sizeR,sizeC))*-1
-    Raster=np.array([OWAseed,OWAgrow,T])
-    tempi_LS=np.array([])
+#     OWAseed,OWAgrow,Result=TakeImage(sizeR,sizeC)
+#     T=np.ones((sizeR,sizeC))*-1
+#     Raster=np.array([OWAseed,OWAgrow,T])
+#     tempi_LS=np.array([])
     
-    for i in range(1):
-        start_LS=time.process_time()
-        print('Output:',i+1,'\n')
-        Burned_LS, seed_array_LS, iterazioni_LS=RG_LS(Raster,sizeR,sizeC)
-        print(seed_array_LS)
-        print('-----------------------')
-        end_LS=time.process_time()
-        delta_LS=(end_LS-start_LS)
-        print('delta:',delta_LS)
-        tempi_LS=np.append(tempi_LS,delta_LS)
+#     for i in range(1):
+#         start_LS=time.process_time()
+#         print('Output:',i+1,'\n')
+#         Burned_LS, seed_array_LS, iterazioni_LS=RG_LS(Raster,sizeR,sizeC)
+#         print(seed_array_LS)
+#         print('-----------------------')
+#         end_LS=time.process_time()
+#         delta_LS=(end_LS-start_LS)
+#         print('delta:',delta_LS)
+#         tempi_LS=np.append(tempi_LS,delta_LS)
         
-    mean=np.mean(tempi_LS)
-    mean_LS=np.append(mean_LS,mean)
+#     mean=np.mean(tempi_LS)
+#     mean_LS=np.append(mean_LS,mean)
         
-    var=np.var(tempi_LS)
-    var_LS=np.append(var_LS,var)
+#     var=np.var(tempi_LS)
+#     var_LS=np.append(var_LS,var)
 
-print('-----------------------')
+# print('-----------------------')
 #-----------------------------------------------------------------------------
 #RegionGrowing_PixelbyPixel
 #-----------------------------------------------------------------------------
@@ -107,8 +105,8 @@ for size in dimension:
   
 
 fig, ax=plt.subplots()
-ax.plot(dimension, mean_LS, marker = "o", color = 'red', label='LayerSum')
-ax.plot(dimension, mean_PP, marker = "x", color = 'blue',label='PixelByPixel')
+ax.plot(dimension, mean_PP_1, marker = "o", color = 'red', label='PixelByPixel with T')
+ax.plot(dimension, mean_PP, marker = "x", color = 'blue',label='PixelByPixel without T')
 plt.title("Process Time")
 plt.xlabel("Image Size") 
 plt.ylabel("time [s]")
