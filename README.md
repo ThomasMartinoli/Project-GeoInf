@@ -1,2 +1,2 @@
-# Thesis
-This folder contains all files related to the work of my thesis.
+# Project GeoInf
+This folder contains all files related to the work of the project.
