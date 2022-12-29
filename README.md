@@ -5,4 +5,4 @@ Author: Thomas Martinoli (952907)
 
 Tutor: prof. Giovanna Venuti
 
-Target: the purpose of the work is the development of an algorithm for Region Growing (RG), that will be introduced in the already existing computation process of Burned Area.
+Target: the purpose of the work is the development of an algorithm for Region Growing, that will be introduced in the already existing computation process of Burned Area.
