@@ -18,13 +18,15 @@ import time
 #Import Images from .TIF file
 #------------------------------------------------------------------------------
 
+# it is possible to select the size of the images
+# obviusly they cannot be bigger than the input image's size
 sizeR=500
 sizeC=500
 
 OWAseed,OWAgrow,Result=TakeImage(sizeR,sizeC)
 
 #------------------------------------------------------------------------------
-#Inizialization to time at -1
+#Inizialization to T at -1
 #------------------------------------------------------------------------------
 
 T=np.ones((sizeR,sizeC))*-1
@@ -97,7 +99,6 @@ print('Errore di omissione:',round(omission_error,2),'%')
 fig, ax=plt.subplots()
 ax.plot(iterazioni_LS, seed_array_LS, marker = "o", color = 'red', label='seed_LayerSum')
 ax.plot(iterazioni_PP, seed_array_PP, marker = "x", color = 'blue',label='seed_PixelByPixel')
-
 
 
 if iterazioni_PP[-1]>=iterazioni_LS[-1]:
