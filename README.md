@@ -1,7 +1,7 @@
 # Project GeoInf
 This folder contains all files related to the work of the project.
 
-Author: Thomas Martinoli (952907) 
+Author: Thomas Martinoli (ID:10502028, matricola: 952907) 
 
 Tutor: prof. Giovanna Venuti
 
