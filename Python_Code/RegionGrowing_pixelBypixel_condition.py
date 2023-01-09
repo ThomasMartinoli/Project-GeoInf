@@ -8,7 +8,7 @@ e si continua a scorrere la matrice fino a che il numero di seeds non varia tra 
 
 con iterazione si intende far scorrere tutti gli elementi di una matrice
 
-@author: thmar
+in questo caso NON viene utilizzata la matrice T
 """
 
 #------------------------------------------------------------------------------
