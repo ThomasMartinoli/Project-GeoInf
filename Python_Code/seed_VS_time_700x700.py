@@ -1,5 +1,9 @@
 # -*- coding: utf-8 -*-
 """
+in questo file vengono applicati gli algoritmi implementati a 5 clip random per verificare un 
+evntuale relazione tra: numero di semi iniziale e tempo di processo
+
+le immagini hanno dimensione 700*700 pixel
 """
 
 import numpy as np
