@@ -7,8 +7,6 @@ si trasforma il risultato (matrice di 0,1,2) in una matrice di (0,1) così da va
 eventualmente se introdurre nuovi seeds
 si ripete il processo fino a che il numero di seeds
 non resta invariato
-
-@author: thmar
 """
 #l'idea è quella di utilizzare una somma di Layer 
 #e non scorrere pixel per pixel
