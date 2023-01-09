@@ -30,7 +30,7 @@ def RG_PP(Raster,sizeR,sizeC):
     
     while N!=M:
         
-        #print(N,M,iterazione-1)
+        print(N,M,iterazione-1)
         M=N
         for j in range(sizeR):
             for k in range(sizeC):

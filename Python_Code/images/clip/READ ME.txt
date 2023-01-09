@@ -1,0 +1,3 @@
+In this folder are collected 5 random clips from the original raster.
+Each clip has dimension 700x700 pixel.
+For each of them are present two layers: the seed and the grow layer.

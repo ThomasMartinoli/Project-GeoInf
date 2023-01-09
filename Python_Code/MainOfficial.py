@@ -51,7 +51,7 @@ ColorGrid(Burned_LS,sizeR,sizeC)
 end = time.process_time()
 
 print('\n')
-print('TEMPO SOMMA LAYER: ',(end - start)/60)
+print('TEMPO SOMMA LAYER [minutes]: ',(end - start)/60)
 print('--------------------------------------------','\n')
 
 
@@ -71,7 +71,7 @@ Burned_PP, seed_array_PP, iterazioni_PP=RG_PP(Raster,sizeR,sizeC)
 
 end1 = time.process_time()
 print('\n')
-print('TEMPO PIXEL BY PIXEL: ',(end1 - start1)/60)
+print('TEMPO PIXEL BY PIXEL [minutes]: ',(end1 - start1)/60)
 print('--------------------------------------------')
 
 

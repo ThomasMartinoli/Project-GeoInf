@@ -1,0 +1,6 @@
+This folder contain the binary images that are used during the project:
+Seed layer; 
+Grow layer;
+result_binary.
+
+The final result (the Burned Map) will be stored in this folder with the following name: Result

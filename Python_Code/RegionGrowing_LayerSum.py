@@ -51,6 +51,6 @@ def RG_LS(Raster,sizeR,sizeC):
         k=k+1
         
         
-        #print(N,M,k)
+        print(N,M,k)
         
     return Seed, seed_array, iterazioni

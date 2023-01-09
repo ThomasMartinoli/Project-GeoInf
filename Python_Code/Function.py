@@ -22,7 +22,7 @@ import copy
 def ExportResult(Burned,sizeR,sizeC):
     path = os.getcwd()
     
-    Seed_file = "\\seed_binary.tif"
+    Seed_file = "\\images\seed_binary.tif"
     SeedTif=rasterio.open(path+Seed_file)
         
         
@@ -30,7 +30,7 @@ def ExportResult(Burned,sizeR,sizeC):
     Result=copy.deepcopy(Seed_array[:,0:sizeR,0:sizeC])
     Result[0]=Burned
         
-    Result_File="\Result.tif"
+    Result_File="\images\Result.tif"
     Result_File_Out=path+Result_File
     
     with rasterio.open(Result_File_Out,
@@ -57,13 +57,14 @@ def ExportResult(Burned,sizeR,sizeC):
 def TakeImage(sizeR,sizeC):
     
     from PIL import Image
-    im_Seed = Image.open('seed_binary.tif')
+    im_Seed = Image.open('images/seed_binary.tif')
     imarray_Seed = np.array(im_Seed)
     
-    im_Grow = Image.open('grow_binary.tif')
+    im_Grow = Image.open('images/grow_binary.tif')
     imarray_Grow = np.array(im_Grow)
     
-    im_Result = Image.open('result_binary.tif')
+    im_Result = Image.open('images/result_binary.tif')
+    
     imarray_Result = np.array(im_Result)
     
     Seed=imarray_Seed[0:sizeR,0:sizeC]
