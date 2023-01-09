@@ -1,6 +1,11 @@
 # -*- coding: utf-8 -*-
 """
-@author: thmar
+nel seguente file vengono utilizzati gli algoritmi implementati di region growing
+è possibile selezionare la dimensione dell'immagine da analizzare modificando la variabile sireR e sizeC
+
+sizeR può assumere un valore massimo di 1445
+sizeC può assumere un valore massimo di 1705 
+
 """
 
 #------------------------------------------------------------------------------
