@@ -1,0 +1,11 @@
+This folder contains the developed codes.
+The scripts that should be run are:
+
+-MainOfficial: in this file are applied the two algorithms on the input
+
+-Statistics_Time: this file is used in order to compair the two algorithms
+
+-Seed_VS_time_700x700: this file opens 5 clips and gives as output a graph in 
+order to understand a relation between the initial number of seed and the processing time
+
+The other files contains function that are used during the process.
